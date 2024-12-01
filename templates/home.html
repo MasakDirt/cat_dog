@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat vs Dog Classifier</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background: url('https://images.unsplash.com/photo-1558788353-f76d92427f16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #555;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    label {
+      font-weight: bold;
+      color: #444;
+    }
+
+    input[type="file"] {
+      font-size: 1rem;
+      padding: 5px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .footer a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Cat vs Dog Classifier</h1>
+    <p>
+      Upload an image, and our machine learning model will predict whether it's a cat or a dog!
+    </p>
+    <form method="post" action="/classify/" enctype="multipart/form-data">
+      <label for="cat-dog">Choose an image:</label>
+      <input type="file" id="cat-dog" name="file" accept="image/png, image/jpeg, image/jpg"/>
+      <input type="submit" value="Check">
+    </form>
+    <div class="footer">
+      <p>Powered by <a href="https://tensorflow.org"
+                       target="_blank">
+        TensorFlow
+      </a> and <a href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a></p>
+    </div>
+  </div>
+</body>
+</html>
